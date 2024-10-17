@@ -21,10 +21,11 @@
         <%= link_to "Following", following_path(@user.username), class: "nav-link" %>
       </li>
     </ul>
-
   </div>
 </div>
 
-<% @user.own_photos.each do |photo| %>
-  <%= render "photos/photo", photo: photo %>
+<% @user.followers.each do |follower| %>
+  <ul class="list-group">
+    <li class="list-group-item"> <%= link_to "#{follower.username}", user_path(follower.username) %> </li>
+  </ul>
 <% end %>
