@@ -9,6 +9,6 @@
   </div>
 </div>
 
-<% @user.own_photos.each do |photo| %>
-  <%= render "photos/photo", photo: photo %>
+<% @user.leaders.each do |leader| %>
+  <%= render "follow_requests/follow", person: leader %>
 <% end %>
